@@ -15,7 +15,7 @@ app.ws('/ws', (ws, req) => {
   connects.push(ws)
 
   ws.on('message', (message) => {
-    console.log('Received:', message+"!")
+    console.log('Received:', message)
 
     connects.forEach((socket) => {
       if (socket.readyState === 1) {
