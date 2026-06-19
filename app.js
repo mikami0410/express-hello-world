@@ -15,12 +15,12 @@ app.ws('/ws', (ws, req) => {
   connects.push(ws)
 
   ws.on('message', (message) => {
-    console.log('Received:', message)
+    console.log('Received:', message+"!")
 
     connects.forEach((socket) => {
       if (socket.readyState === 1) {
         // Check if the connection is open
-        socket.send("?")
+        socket.send(message)
       }
     })
   })
@@ -33,4 +33,4 @@ app.ws('/ws', (ws, req) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 })
-///
+
