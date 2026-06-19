@@ -7,10 +7,10 @@ expressWs(app)
 const port = process.env.PORT || 3001
 let connects = []
 
-app.get('/', (req, res)=>{
-  res.send('Hello"');
+app.get('/', (req, res) => {
+  res.send('Hello');
 });
-app.get('/exmaple',(req, res)=>{
+app.get('/exmaple', (req, res) => {
   res.send('example');
 });
 
@@ -38,3 +38,4 @@ app.ws('/ws', (ws, req) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 })
+
