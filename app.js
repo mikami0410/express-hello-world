@@ -7,7 +7,12 @@ expressWs(app)
 const port = process.env.PORT || 3001
 let connects = []
 
-app.get('/', (req, res) => res.jasonn({statues: 'ok'}))
+app.get('/', (req, res)=>{
+  res.send('Hello"');
+});
+app.get('/exmaple',(req, res)=>{
+  res.send('example');
+});
 
 app.use(express.static('public'))
 
